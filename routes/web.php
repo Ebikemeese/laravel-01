@@ -16,16 +16,16 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("home");
 
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name("contact");
 
 Route::get('/user/{id}', function ($id) {
     return view('user');
-});
+})->name("user");
 
 Route::get('/test', function () {
     return "This is a test";
@@ -34,15 +34,15 @@ Route::get('/test', function () {
 Route::prefix("portfolio")->group(function () {
     Route::get('', function () {
         return view('portfolio');
-    });
+    })->name("portfolio");
 
     Route::get('/company', function () {
         return view('company');
-    });    
+    })->name("company");
 
     Route::get('/organization', function () {
         return view('organization');
-    });    
+    })->name("organization");    
 });
 
 Route::post('/sign-in', function (Request $request) {

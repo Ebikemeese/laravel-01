@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  @vite('resources/css/app.css')
-  @vite('resources/js/app.js')
-</head>
-<body>
-  <h1>Home</h1>
+@extends('layouts.root')
+
+@section('header')
+  <h2>Home</h2>
+  @include('sidemenu')
+@endsection('header')
+
+
+
+@section('maincontent')
   <a href="{{ route('testpage') }}">Test page</a>
 
   <form action="{{ route('sign-in') }}" method="post">
@@ -26,5 +25,8 @@
 
     <button type="submit">Continue</button>
   </form>
-</body>
-</html>
+
+  <img src="{{ asset('images/tech.jpg') }}" alt="Tech Image">
+@endsection('maincontent')
+
+  
