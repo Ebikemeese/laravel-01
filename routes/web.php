@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,6 @@ Route::post('/sign-in', function (Request $request) {
 
     return "Your email is: $email and your password is: $password";
 })->name("sign-in");
+
+
+Route::resource('posts', PostController::class);
